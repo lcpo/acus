@@ -1,4 +1,4 @@
-#include "acus.c"
+#include "suac.c"
 
 int main(int argc, char** argv,char** env){
 	sys_t s;
