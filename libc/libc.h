@@ -81,6 +81,7 @@ char* (*strstr)(char *string, char *substring);
 ///---------------------------------------------------------------------
 char* (*strtok)(char *p, char *tok);
 ///---------------------------------------------------------------------
+//memory copy
 void* (*memcpy)(void *dest, void *src, size_t n);
 ///---------------------------------------------------------------------
 void* (*memcat)(void *dest, void *src, size_t n);
@@ -92,10 +93,13 @@ int (*memcmp)(void *s1,  void *s2, size_t n);
 void* (*memchr)(void *s, int c, size_t n);
 ///---------------------------------------------------------------------
 void* (*memset)(void *s, int c, size_t n);
-///---------------------------------------------------------------------
+///------------------------------------------------------------
 //array
 size_t (*count)(void** v);
 ///------------------------------------------------------------
+void* (*end)(void** arr);
+///------------------------------------------------------------
+//memory alloc
 void (*free_ptr)(void* ptr);
 ///------------------------------------------------------------
 void (*free)(void* ptr);
@@ -111,4 +115,16 @@ void (*lfree_ptr)(void* ptr);
 void (*lfree)(void* ptr);
 ///------------------------------------------------------------
 void* (*lrealloc)(void *ptr, size_t size);
+//additional string
+uni (*strpos)(char *haystack, char *needle);
+uni (*chrpos)(char *haystack, char needle);
+uni	(*sch)(char* str, char ch);
+int (*scmp)(char* str1, char* str2);
+uni (*strnpos)(char* str, char* sub, int ot);
+long (*substr_count)(char* str_s, char* sub_s);
+long (*subchr_count)(char* str_s, char sub_c);
+//length type
+//conversion types
+//conversion format
+
 	}st_t;

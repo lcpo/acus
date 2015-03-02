@@ -305,7 +305,13 @@ size_t count(void** v) {
 }
 st.count=count;
 ///---------------------------------------------------------------------
-
+void* end(void** arr){
+long pos=count(arr);
+return arr[pos];	
+					 }
+st.end=end;
+///---------------------------------------------------------------------
+//memory alloc
 uni getptrid(void *ptr, mhope hope){
 uni i=0,z=0,n=-1;
 while(i<hope.i){
@@ -522,6 +528,82 @@ uni i=0,z=0,id=lgetptrid(ptr,ween);
 st.lrealloc=lrealloc;
 //-------------------------------------
 ///------------------------------------------------------------
+//additional string
+
+uni strpos(char *haystack, char *needle){
+   char *p = strstr(haystack, needle);
+   if (p){return p - haystack;}else{return -1;}  
+}
+st.strpos=strpos; 
+//!------------------------------------------------------------
+uni chrpos(char *haystack, char needle){
+   char *p = strchr(haystack, needle);
+   if (p){return p - haystack;}else{return -1;}  
+}
+st.chrpos=chrpos;
+//!------------------------------------------------------------ 
+uni	sch(char* str, char ch) {//присутствует ли символ в строке
+    uni i=0;
+    while (str[i] != '\0') {
+        if (str[i] == ch) {
+            return 1;
+        }
+        ++i;
+    }
+    return 0;
+}
+st.sch=sch;
+//!------------------------------------------------------------
+//усложненная проверка сравнения срок, сравнение по длине и вхожденнии
+int scmp(char* str1, char* str2){
+uni si1=strlen(str1); 
+uni si2=strlen(str2);
+if(si1>si2){return -1;}
+if(si2>si1){return -2;}
+if(si1==si2){
+uni i;
+for(i=0;i<si1;i++){
+if(str1[i]!=str2[i]){return 0;}
+				  }
+			}
+return 1;
+										}
+st.scmp=scmp;
+
+//!------------------------------------------------------------
+uni strnpos(char* str, char* sub, int ot) {
+    int pFind = 0, pos = 0;
+    str=str+ot;
+    if (strstr(str,sub)) {
+        pFind=strlen(strstr(str, sub));
+        pos =strlen(str+pFind);
+    }
+    return pos;
+}
+//!------------------------------------------------------------
+long substr_count(char* str_s, char* sub_s) {
+    long count_sub=0;
+    str_s = strstr(str_s,sub_s);
+    while (str_s!=0) {
+        str_s=str_s+strlen(sub_s);
+        str_s = strstr(str_s,sub_s);
+        count_sub++;
+    }
+    return count_sub;
+}
+
+//!------------------------------------------------------------
+long subchr_count(char* str_s, char sub_c) {
+    long count_sub=0;
+    str_s = strchr(str_s,sub_c);
+    while (str_s!=0) {
+        str_s=str_s+1;
+        str_s = strchr(str_s,sub_c);
+        count_sub++;
+    }
+    return count_sub;
+}
+//!------------------------------------------------------------
 
 return st;
 	}
