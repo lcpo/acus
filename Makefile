@@ -94,7 +94,7 @@ clear:
 	rm -rf *.o $(EXECUTABLE)
 
 clearall:
-	rm -rf *.o $(EXECUTABLE) lib$(EXECUTABLE).a $(EXECUTABLE).so *.*~
+	rm -rf *.o $(EXECUTABLE) lib$(EXECUTABLE).a $(EXECUTABLE).so *~
 break:
 	rm -rf *.o
 index:
