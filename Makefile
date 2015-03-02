@@ -88,7 +88,7 @@ testasm:
 	strip $(EXECUTABLE) -R .rel.dyn 
 	objdump -d $(EXECUTABLE)
 
-	
+	   
 clear:
 	clear
 	rm -rf *.o $(EXECUTABLE)
