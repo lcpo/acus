@@ -60,7 +60,7 @@ testlog:
 	make clear
 	$(CC) -c -w $(SOURCES)
 	$(CC) $(SOPTS) -o $(EXECUTABLE) $(OBJECT) $(LIBS)
-	strace ./$(EXECUTABLE) "arg1" "arg2"
+	strace $(EXECUTABLE) "arg1" "arg2"
 testasm:
 	make clear
 	$(CC) -c -w $(SOURCES)
